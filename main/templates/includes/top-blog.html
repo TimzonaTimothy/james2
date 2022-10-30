@@ -1,0 +1,163 @@
+{% load static %}
+
+<!-- sponser ad3 -->
+<div class="jumbotron text-center py-10" id="banner">
+    <h4>sponser ads #3</h4>
+</div>
+<!-- end sponsor ad3 -->
+
+<!-- Crypto price Section Start -->
+<section class="mt-5 overflow-hidden section bg-soft-primary ">
+    <div class="container">
+        <div class="text-center text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+            id="onlinecasinodeutschland">
+            <h1 class="post-header text-texture">Cryptocurrency
+                <span>
+                    <i class="fab fa-bitcoin" style="color:  #f2a900;"></i>
+                </span>
+            </h1>
+
+
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-4 col-md-6" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000">
+                <div class="market-box ">
+                    <div class="market-content">
+                        <coingecko-coin-ticker-widget coin-id="bitcoin" currency="usd" width="0" locale="en"
+                            background-color="#1E2329"></coingecko-coin-ticker-widget>
+                    </div>
+
+                    <!--pattern end-->
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000">
+                <div class="market-box">
+                    <div class="market-content">
+                        </script>
+                        <coingecko-coin-ticker-widget coin-id="ethereum" currency="usd" width="0" locale="en"
+                            background-color="#1E2329"></coingecko-coin-ticker-widget>
+                    </div>
+                    <!--pattern start-->
+
+                    <!--pattern end-->
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000">
+                <div class="market-box">
+                    <div class="market-content">
+                        <coingecko-coin-ticker-widget coin-id="binanceCoin" currency="usd" width="0" locale="en"
+                            background-color="#1E2329"></coingecko-coin-ticker-widget>
+                    </div>
+                    <!--pattern start-->
+
+                    <!--pattern end-->
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="flip-right"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000">
+                <div class="market-box">
+                    <div class="market-content">
+                        <coingecko-coin-ticker-widget coin-id="litecoin" currency="usd" width="0" locale="en"
+                            background-color="#1E2329"></coingecko-coin-ticker-widget>
+                    </div>
+                    <!--pattern start-->
+
+                    <!--pattern end-->
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="flip-right"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000">
+                <div class="market-box">
+                    <div class="market-content">
+                        <coingecko-coin-ticker-widget coin-id="ripple" currency="usd" width="0" locale="en"
+                            background-color="#1E2329"></coingecko-coin-ticker-widget>
+                    </div>
+                    <!--pattern start-->
+
+                    <!--pattern end-->
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="flip-right"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000">
+                <div class="market-box">
+                    <div class="market-content">
+                        <coingecko-coin-ticker-widget coin-id="TRON" currency="usd" width="0" locale="en"
+                            background-color="#1E2329"></coingecko-coin-ticker-widget>
+                    </div>
+                    <!--pattern start-->
+
+                    <!--pattern end-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Crypto price Section Start  End-->
+
+<!-- header -->
+<div class="max-w-3xl mx-auto px-4 sm:px-4 lg:px-4 py-5">
+    <div class="text-center text-2xl leading-4 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+        >
+        <h1 class="post-header"> Top Blog Posts<span>
+                <i class="fas fa-blog px-2" aria-hidden="true" style="color:#f2a900;"></i>
+            </span></h1>
+    </div>
+</div>
+
+<!-- blog post top 3 -->
+<div class="container-fluid">
+    <div class="row" >        
+        {% for post in blog_post|slice:":3" %}
+        
+        <div class="col-md-4 " >
+            <div class="card mb-4">
+                <div class=" p-2"  style="border: 1px solid whitesmoke;border-radius: .7rem;box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;;">
+                    {% if post.image %}
+                    <a href="{% url 'post_detail' post.id %}" >
+                        <div class="show">
+                            <img class="card-img-top " src="{{ post.image.url }}" alt="Card image cap" style="border-radius: .7rem">
+                        </div>
+                    </a>
+                    {% endif %}
+                    <div class="card-body"> `
+                        <div class="card-title font-semibold">
+                            <h2 ><a href="{% url 'post_detail' post.id %}" title="{% url 'post_detail' post.id %} "  class="text-header">
+                                {{post.title|truncatechars:30}}<span class="badge badge-primary  m-2" style="font-size: 14px;font-family: Arial, Helvetica, sans-serif;">{{post.category}}</span>
+
+                            </a></h2>
+                        </div>
+                        <div >
+                            <p class="card-subtitle mb-2 text-muted"><i class="fa fa-calendar" aria-hidden="true"></i> <span>Published on: </span> {{ post.published_date }} </p>
+                        </div>
+                        <div>
+            
+
+                            <br>
+                            <hr style="background: whitesmoke;">
+                            <br>
+                            <a href="{% url 'post_detail' post.id %}" rel="nofollow noopener noreferrer" data-name="" 
+                                class="btn  inline-block w-full text-center items-center py-3 font-medium rounded-lg shadow-sm bg-indigo-800 text-black learn-more-btn " style="background: #F0B90B;">
+                                Read More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        {% endfor %}
+
+    </div>
+</div>
+<!-- end blog post top 3-->

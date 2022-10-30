@@ -1,0 +1,74 @@
+<title>Crypto-Ranker | Contact</title>
+{% extends "./Blog/base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+        <!-- contact section -->
+
+        <div class="contact1">
+            <div class="bg-white shadow-xl rounded-lg overflow-hidden md:flex">
+                <div class="bg-cover bg-bottom h-56 md:h-auto md:w-56 " >
+                </div>
+                <div>
+                    <div class="p-4 md:p-5 contact-bg">
+                        <p class="font-bold text-xl md:text-2xl">Contact Us</p>
+                        <p class="text-gray-700 md:text-lg">Our team is happy to answer your advertisment and review questions.Fill out the form and we'll be in touch as soon as possible.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container-contact1">
+                <div class="contact1-pic js-tilt" data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
+                    <img src="{% static '/img/img-01.png' %}" alt="IMG">
+                    <img src="{% static '/img/bg/iPad Mini 01.png' %}" alt="IMG">
+                </div>
+    
+                <form class="contact1-form validate-form myform" id="form" data-aos="fade-left" onsubmit="success()"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine" method="POST" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <span class="contact1-form-title">
+                            Get in touch <br>- Send A Review Or Advertise With Us -
+                    </span>
+    
+                    <div class="wrap-input1 validate-input" >
+                        <input class="input1" type="text" name="from_name" id="from_name" placeholder="Name/Company Name/Project Name" required >
+                        <span class="shadow-input1"></span>
+                    </div>
+    
+                    <div class="wrap-input1 validate-input" >
+                        <input class="input1" type="text" name="email" placeholder="Email" required >
+                        <span class="shadow-input1"></span>
+                    </div>
+    
+                    <div class="wrap-input1 validate-input" >
+                        <input class="input1" type="text" name="subject" id="reply_to" placeholder="Subject" required  >
+                        <span class="shadow-input1"></span>
+                    </div>
+    
+                    <div class="wrap-input1 validate-input">
+                        <textarea class="input1" name="message" id="message" placeholder="Message/Review" ></textarea>
+                        <span class="shadow-input1"></span>
+                    </div>
+    
+                    <div class="container-contact1-form-btn" data-aos="fade-down"
+                    data-aos-easing="linear"
+                    data-aos-duration="1000">
+                    <button class="contact1-form-btn" type="submit" id="button" value="Send Email" style="font-family:Arial, Helvetica, sans-serif;">
+                        <span>
+                            Send Email
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                    </div>
+                </form>                  
+            </div>
+            <div class="overlay"></div>
+        </div>
+    
+        <!-- end contact section -->
+
+{% endblock %}

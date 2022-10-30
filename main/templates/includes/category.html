@@ -1,0 +1,21 @@
+{% load static %}
+<div class="collapse navbar-collapse display-none" id="navbarsExampleDefault">
+    <ul class="navbar-nav full-nav left-nav">
+
+        <h1 class="text-center  category-header p-3 post-header">CATEGORIES</h1>
+        {% for category in links %}
+        <a href="{{ category.get_url }}" class="nav-item active shadowed link" >
+            <li class="nav-link" href="{{ category.get_url }}" 
+                rel="noopener noreferrer">{{ category.category_name.title }}</li>
+        </a>
+        {% endfor %}
+        
+
+        <div class="jumbotron text-center py-10 ad4" id="banner">
+            <h4>sponser ads #4</h4>
+        </div>
+        <i class="fas fa-moon change-theme theme-button" id="theme-button"></i>
+
+    </ul>
+
+</div>
