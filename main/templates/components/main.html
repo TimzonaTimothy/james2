@@ -1,0 +1,170 @@
+<title>Crypto-Ranker </title>
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+    <!-- about us -->
+    <section class="container-fluid max-w-7xl mx-auto pt-8 px-4 sm:px-6 lg:px-8 text-center rounded-lg " id="about">
+        <div class="shadow-lg   max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 rounded-lg about-us">
+            <div class="pb-8 text-center text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+                >
+                {% if category_product %}
+                <h1 class="post-header text-texture">{{ category_product.category.title|safe  }}<span>
+                        <img src="{% static '/img/icons/id-card.png' %}" class="id-card" alt="">
+                    </span></h1>
+                {% endif %}
+
+            </div>
+
+            {% if category_product %}
+            <div class="content text-base text-gray-500 leading-normal">
+                <p> {{ category_product.category.description|safe  }}<br />
+                </p>
+
+            </div>
+            {% endif %}
+
+        </div>
+    </section>
+    <!-- about us -->
+
+
+
+    <!-- top education collections -->
+    <div class="cards py-8" id="Collections">
+        <div class="text-center text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+            id="onlinecasinodeutschland">
+            
+            <h1 class="post-header text-texture">Top Categories<span>
+                    <img src="{% static '/img/icons/collection (4).png' %}" alt="">
+                </span></h1>
+            
+    
+        </div>
+        {% if products %}
+        {% for product in products %}
+        <a href="{{ product.get_url }}"></a>
+        <div class="card-holder about-box card-shadow">
+        
+
+            <div class="brand-image">
+                {% if product.thumbnail %}
+                <img src="{{ product.thumbnail.url }}" alt="">
+                {% endif %}
+                <div class="brand-name">
+                    {% if product.url %}
+                    <a href="{{ product.get_url }}" >
+                        <p class=" text-change">{{ product.name }}</p>
+                    </a>
+                    {% else %}
+                    <a href="" >
+                        <p class=" text-change">{{ product.name }}</p>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- start pros -->
+            {% if product.pros %}
+            <div class="brand-pros box-bgg text-change">
+                <h5>Pros</h5>
+                <ul>
+                    <li class="my-1">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                        {{ product.pros }}
+                    </li>
+                    <li class="my-1">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                        {{ product.pros_1 }}
+                    </li>
+                    <li class="my-1">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                        {{ product.pros_2 }}
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
+            <!-- end pros -->
+
+            <!-- more info -->
+            {% if product.more_info_1 %}
+            <div class="brand-pros box-bgg text-change">
+                <h5>More info</h5>
+                <ul>
+                    <li class="my-1">
+                        <i class="fa fa-circle-info" aria-hidden="true"></i>
+                        {{ product.more_info_1 }}
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
+            <!-- end more info -->
+
+            <!-- start cons -->
+            {% if product.cons %}
+            <div class="brand-pros box-bgg text-change">
+                <h5>Cons</h5>
+                   <ul>
+                       <li class="my-1">
+                           <i class="fa fa-times" aria-hidden="true"></i>
+                           {{ product.cons }}
+                       </li>
+                       <li class="my-1">
+                           <i class="fa fa-times" aria-hidden="true"></i>
+                           {{ product.cons_1 }}
+                       </li>
+                       <li class="my-1">
+                           <i class="fa fa-times" aria-hidden="true"></i>
+                           {{ product.cons_2 }}
+                       </li>
+                   </ul>
+            </div>
+            {% endif %}
+            <!-- end cons -->
+
+            <!-- more info -->
+            {% if product.more_info_2 %}
+            <div class="brand-pros box-bgg text-change">
+                   <ul>
+                       <li class="my-1">
+                           <i class="fa fa-circle-info" aria-hidden="true"></i>
+                           {{ product.more_info_2 }}
+                       </li>
+                   </ul>
+            </div>
+            {% endif %}
+            <!-- end more info -->
+
+            <div class="visit-brand  text-change">
+                <div class="box-bg ">Score {{ product.score }}/10</div>
+                 {% if product.url %}
+                <a href="{{ product.url }}" rel="nofollow noopener noreferrer" data-name="" target="_blank"
+                    class="out-link inline-block w-full items-center py-3 font-medium rounded-lg shadow-sm bg-indigo-800 text-center text-white learn-more-btn">
+                    Visit Site
+                </a>
+            
+                {% else %} 
+                <a href="" rel="nofollow noopener noreferrer" data-name="" target="_blank"
+                    class="out-link inline-block w-full items-center py-3 font-medium rounded-lg shadow-sm bg-indigo-800 text-center text-white learn-more-btn">
+                    Visit Site
+                </a>
+                {% endif %}
+            </div>
+            
+        </div>
+    </a>
+        {% endfor %}
+        {% else %}
+        <div class="alert alert-primary" role="alert">
+            <h2>No result found, Please try again later.</h2>
+        </div>
+        {% endif %}
+    <!--end top education collections -->
+
+    
+
+{% endblock %}
