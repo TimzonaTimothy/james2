@@ -1,0 +1,78 @@
+{% load static %}
+
+<div class="container-fluid" id="margin-top">
+
+    <!-- TradingView Widget BEGIN -->
+    <div>
+        <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget>
+    </div>
+    <!-- TradingView Widget END -->
+
+    <div class="jumbotron mt-2" id="banner">
+        <h3>sponser ads #1</h3>
+    </div>
+
+
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog  modal-newsletter">
+              <div class="modal-content">
+                    <form  action="{% url 'subscribe' %}" method="POST" onsubmit="success()">
+                        <div class="modal-header">
+                            <h4>Join Our Newsletter</h4>
+                            <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-hidden="true"
+                            >
+                            <span>&times;</span>
+                            </button>
+                        </div>
+                     {% csrf_token %}
+                      <div class="modal-body text-center">
+                        <p class="mb-2">
+                            Subscribe our newsletter to receive the latest news and
+                            exclusive offers every week. No spam.(Please ignore if you have subscribed already)
+                        </p>
+                        <div class="form-group">
+                            <input
+                            type="text"
+                            class="inp w-full text-decoration-underline "
+                            placeholder="Enter your name"
+                            name="name"
+                            style="font-family:Arial, Helvetica, sans-serif;"
+                            required
+                            />
+                            <input
+                            type="email"
+                            class="inp w-full text-decoration-underline mt-2"
+                            placeholder="Enter your email"
+                            name="email"
+                            id="email"
+                            style="font-family:Arial, Helvetica, sans-serif;"
+                            required
+                            />
+                            <input 
+                            type="submit"
+                            class="btn  mt-2 w-full  inline-block  text-center items-center py-2 font-medium rounded-lg shadow-sm text-gray-900 font-medium text-black learn-more-btn save "
+                            value="Subscribe" style="background: #F0B90B;"
+                            />
+                        </div>
+                        <div class="text-muted" data-dismiss="modal" style="cursor: pointer;">No Thanks</div>
+                      </div>
+                    </form>
+              </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+     function success(params) {
+        let email = document.getElementById('email').value;
+      swal({
+          title: "Good job!",
+          text: email + 'subscribed successfully',
+          icon: "success",
+          button: "Okay",
+      });
+    }
+</script>

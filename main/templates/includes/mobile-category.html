@@ -1,0 +1,28 @@
+{% load static %}
+
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+    <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static '/img/icons/logo6.png' %}" alt="">
+    </a>
+
+    <a class="nav-link" href="{% url 'home' %}"  rel="noopener noreferrer">Home </a>
+    <a class="nav-link" href="#about"  rel="noopener noreferrer">About </a>
+    <a class="nav-link" href="{% url 'post_list' %}"  rel="noopener noreferrer">Blog </a>
+    <a class="nav-link" href="{% url 'contact' %}"  rel="noopener noreferrer">Contact Us </a>
+
+
+    <a href="" style="color: white;"><p>Top Categories</p></a>
+    {% for category in links %}
+    <a class="nav-link" href="{{ category.get_url }}"  rel="noopener noreferrer">{{ category.category_name.title }}</a>
+    {% endfor %}
+
+    
+    <div class="jumbotron text-center py-10 ad4" id="banner">
+        <h4>sponser ads #4</h4>
+    </div>
+
+
+</div>

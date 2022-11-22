@@ -1,0 +1,196 @@
+
+<title>Crypto-Ranker </title>
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+    <!-- BEGIN CONTENT -->
+    <div class="about-box ">
+        <div class="content content--review ">
+            <div class="container ">
+                <div class="content__wrap about-box text-header">
+                    <div class="content__head">
+                        <div class="content__head-inner">
+                            <div class="content__head-left">
+                                <h2 class="content__head-title"><svg class="icon-svg icon-logo-small">
+                                    </svg><span class="text-header">{{ single_product.name }}</span></h2>
+                            </div>
+                        </div><!-- end .content__head-inner -->
+                    </div><!-- end .content__head -->
+                    <div class="content__holder">
+                        <div class="review">
+                            <div class="review__left">
+                                {% if single_product.thumbnail %}
+                                <div class="review__img"><img class="lazyload"
+                                        src="{{single_product.thumbnail.url}}"
+                                        style="object-fit: cover;" alt="{{ single_product.name }}" title="{{ single_product.name }}" />
+                                </div>
+                                {% endif %}
+                                <a href="{{ single_product.url }}" rel="nofollow noopener noreferrer " data-name="" target="_blank"
+                                    class="out-link inline-block w-full text-center items-center py-3 font-medium rounded-lg shadow-sm bg-indigo-800 text-white learn-more-btn">
+                                    Visit Site
+                                </a>
+                            </div><!-- end .review__left -->
+                            <div class="review__right">
+                                <div class="review__head">
+                                    <div class="review__head-left">
+                                        <h3><a class="review__head-link review-headline__link"
+                                                href="{{ single_product.url }}" rel="noopener" target="_blank"
+                                                ><span>
+                                                    <h1 class="text-header  ">{{ single_product.name }}</h1>
+
+                                                </span></a>
+                                        </h3>
+                                        <div id="link-rating-msg" style="display: none"></div>
+                                    </div>
+                                </div><!-- end .review__head -->
+                                <div class="review__content">
+                                    <div class="review__box">
+                                        <p>{{ single_product.info|safe }} </p>
+                                        <p></p>
+                                    
+
+                                    </div>
+                                    {% if single_product.pros %}
+                                    <div class="review__row">
+                                        <div class="review__col">
+                                            <div class="review__row">
+                                                <div class="review__col">
+                                                    <div class="review__title">Pros</div>
+                                                </div>
+                                            </div>
+                                            <li class="review__list-item">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                <span>{{ single_product.pros}}</span>
+                                            </li>
+                                            {% if single_product.pros_1 %}
+                                            <li class="review__list-item">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                <span>{{ single_product.pros_1}}.</span>
+                                            </li>
+                                            {% endif %}
+                                            {% if single_product.pros_2 %}
+                                            <li class="review__list-item">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                <span>{{single_product.pros_2}}</span>
+                                            </li>
+                                            {% endif %}
+                                            {% if single_product.pros_3 %}
+                                            <li class="review__list-item">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                <span>{{single_product.pros_3}}</span>
+                                            </li>
+                                            {% endif %}
+                                            {% if single_product.pros_4 %}
+                                            <li class="review__list-item">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                <span>{{single_product.pros_4}}</span>
+                                            </li>
+                                            {% endif %}
+
+                                        </div>
+                                        {% endif %}
+
+                                        {% if single_product.cons %}
+                                        <div class="review__col">
+                                            <div class="review__row">
+                                                <div class="review__col">
+                                                    <div class="review__title">Cons</div>
+                                                </div>
+                                            </div>
+                                            <li class="review__list-item">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                                <span>{{ single_product.cons }}</span>
+                                            </li>
+                                            {% if single_product.cons_1 %}
+                                            <li class="review__list-item">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                                <span>{{single_product.cons_1}}</span>
+                                            </li>
+                                            {% endif %}
+                                            {% if single_product.cons_2 %}
+                                            <li class="review__list-item">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                                <span>{{single_product.cons_2}}</span>
+                                            </li>
+                                            {% endif %}
+                                            {% if single_product.cons_3 %}
+                                            <li class="review__list-item">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                                <span>{{single_product.cons_3}}</span>
+                                            </li>
+                                            {% endif %}
+                                            {% if single_product.cons_3 %}
+                                            <li class="review__list-item">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                                <span>{{single_product.cons_3}}</span>
+                                            </li>
+                                            {% endif %}
+                                        </div>
+                                        {% endif %}
+
+
+
+                                            {% if single_product.more_info_1 %}
+                                            <div class="review__row">
+                                                <div class="review__col">
+                                                    <div class="review__row">
+                                                        <div class="review__col">
+                                                            <div class="review__title">More info</div>
+                                                        </div>
+                                                    </div>
+                                                    <li class="review__list-item">
+                                                        <i class="fa fa-circle-info" aria-hidden="true"></i>
+                                                        <span>{{ single_product.more_info_1}}</span>
+                                                    </li>
+                                               
+                                        
+                                            </div>
+                                            {% endif %}
+    
+                                            {% if single_product.more_info_2 %}
+                                            <div class="review__col">
+                                                <div class="review__row">
+                                                    <div class="review__col">
+                                                        <div class="review__title">Cons</div>
+                                                    </div>
+                                                </div>
+                                                <li class="review__list-item">
+                                                    <i class="fa fa-circle-info" aria-hidden="true"></i>
+                                                    <span>{{ single_product.more_info_2}}</span>
+                                                </li>
+                                            
+                                        
+                                            </div>
+                                            {% endif %}
+    
+
+                                        
+
+
+
+                                    </div>
+                                </div><!-- end .review__content -->
+                            </div><!-- end .review__right -->
+                        </div>
+                    </div><!-- end .content_holder -->
+                </div><!-- end .content__wrap -->
+            </div><!-- end .container -->
+
+        </div><!-- end .main -->
+        <!-- END CONTENT -->
+
+    </div><!-- end .wrapper -->
+    
+
+{% endblock %}
+
+
+
+
+
+
+
+    

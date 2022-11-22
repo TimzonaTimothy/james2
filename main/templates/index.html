@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <!-- about us -->
+    <section class="container-fluid max-w-7xl mx-auto pt-8 px-4 sm:px-6 lg:px-8 text-center rounded-lg " id="about">
+        <div class="shadow-lg   max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 rounded-lg about-us">
+            <div class="pb-8 text-center text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+                id="onlinecasinodeutschland">
+                <h1 id="about" class="post-header text-texture">About Crypto-ranker<span>
+                        <img src="{% static '/img/icons/id-card.png' %}" class="id-card" alt="">
+                    </span></h1>
+
+
+            </div>
+            <div class="content text-base text-gray-500 leading-normal">
+                <p>Interested in various crypto currency categories and exploits When it comes to finding the
+                    best cryptocurrency websites.
+                    There are so many great resources out there these days. But, finding them can be tricky.Here are
+                    rounded up
+                    best crypto links around. Most importantly, all of these sites are designed to help you learn
+                    more
+                    about bitcoin and cryptocurrencies. Some of them I've even used personally. This list is growing
+                    all
+                    the time, so bookmark it and come back every once in a while to see what's new.<br />
+
+                </p>
+
+            </div>
+        </div>
+    </section>
+    <!-- about us -->
+
+    {% include 'includes/newsletter.html' %} 
+
+
+    
+
+    <!-- beginning all collection -->
+    <div class="py-8" id="Collections">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+                id="onlinecasinodeutschland">
+                <h1 class="post-header text-texture ">Explore Top Collection <span>
+                        <img src="{% static '/img/icons/collection (4).png' %}" alt="">
+                    </span></h1>
+
+
+            </div>
+        </div>
+        <div class="mx-auto max-w-md text-center sm:max-w-3xl px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+            <div class="flex flex-col pt-12 lg:gap-8 lg:grid lg:grid-cols-4">
+                {% if products %}
+        {% for product in products %}
+                <div data-aos="zoom-in-down"
+                    class="flow-root flex rounded-xl p-3 group mb-8 lg:mb-0 min-w-max card-shadow about-box card-shadow name">
+                    
+                    <div class="flex items-center space-x-3">
+                        {% if product.image %}
+                        <a href="" class="w-12 h-12 inline-flex items-center justify-center rounded-xl"
+                            style="background: white;">
+                            <img class="w-10 h-10" src="{{ product.image.url }}" alt="" width="1000"
+                                height="1000" loading="lazy" />
+                        </a>
+                        {% endif %}
+                        <div class="flex flex-col content-center space-y-1">
+                            <a href="{{ product.get_url }}"
+                                class="flex text-center font-medium truncate text-normal text-change  font-semibold leading-none">{{product.name}}</a>
+                            
+                        </div>
+                    </div>
+                    <dl class="py-4 flex ">
+                        <div class="flex flex-col w-1/2 rounded-l-lg py-1 text-center text-change bg-rank">
+                            <!-- <dt class="text-xs uppercase before-spins"></dt> -->
+                            <dd class="font-semibold">
+                                #{{product.score}}
+                            </dd>
+                        </div>
+                        <div class="flex flex-col w-1/2 rounded-r-lg py-1 text-center text-change bg-rank">
+                            <!-- <dt class="text-xs uppercase before-bonus"></dt> -->
+                            <dd class="font-semibold">
+                                {{product.category}}
+                            </dd>
+                        </div>
+                    </dl>
+                    <a href="{{ product.get_url }}" rel="nofollow noopener noreferrer" data-name="" 
+                        class="out-link inline-block w-full items-center py-3 font-medium rounded-lg shadow-sm bg-indigo-800 text-white learn-more-btn">
+                        Learn More
+                    </a>
+                    
+                </div>
+                {% endfor %}
+        {% else %}
+        <div class="jumbotron">
+            <h2>No result found, Please try again later.</h2>
+        </div>
+        {% endif %}
+
+            </div>
+
+        </div>
+        <div class="jumbotron text-center mt-10" id="banner">
+            <h4>sponser ads #2</h4>
+        </div>
+        <div class="mx-auto max-w-md text-center sm:max-w-3xl px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+            <div class="flex flex-col pt-12 lg:gap-8 lg:grid lg:grid-cols-4">
+                {% if second_products %}
+        {% for second_product in second_products %}
+                <div data-aos="zoom-in-down"
+                    class="flow-root flex rounded-xl p-3 group mb-8 lg:mb-0 min-w-max card-shadow about-box card-shadow">
+                    <div class="flex items-center space-x-3">
+                        {% if second_product.image %}
+                        <a href="" class="w-12 h-12 inline-flex items-center justify-center rounded-xl"
+                            style="background: white;">
+                            <img class="w-10 h-10" src="{{ second_product.image.url }}" alt="" width="1000"
+                                height="1000" loading="lazy" />
+                        </a>
+                        {% endif %}
+                        <div class="flex flex-col content-center space-y-1">
+                            <a href="#"
+                                class="flex text-center font-medium truncate text-normal text-change  font-semibold leading-none">{{second_product.name}}</a>
+                        </div>
+                    </div>
+                    <dl class="py-4 flex ">
+                        <div class="flex flex-col w-1/2 rounded-l-lg py-1 text-center text-change bg-rank">
+                            <!-- <dt class="text-xs uppercase before-spins"></dt> -->
+                            <dd class="font-semibold">
+                                #2
+                            </dd>
+                        </div>
+                        <div class="flex flex-col w-1/2 rounded-r-lg py-1 text-center text-change bg-rank">
+                            <!-- <dt class="text-xs uppercase before-bonus"></dt> -->
+                            <dd class="font-semibold">
+                                {{second_product.category}}
+                            </dd>
+                        </div>
+                    </dl>
+                    <a href="{{ second_product.get_url }}" rel="nofollow noopener noreferrer" data-name="" 
+                        class="out-link inline-block w-full items-center py-3 font-medium rounded-lg shadow-sm bg-indigo-800 text-white learn-more-btn">
+                        Learn More
+                    </a>
+                </div>
+
+                {% endfor %}
+        {% else %}
+        <div>
+            <h2></h2>
+        </div>
+        {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+
+
+    
+
+  
+{% endblock %}

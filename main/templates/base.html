@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        
+        <!-- <meta http-equiv="refresh" content="1"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Crypto-Ranker | we promote crypto projects and rank them based on their quality</title>
+    
+        <meta name="description" content="We are updated">
+    
+        <!-- Google / Search Engine Tags -->
+        <meta itemprop="name" content="Crypto-Ranker- Welcome to Crypto-Ranker">
+        <meta itemprop="description" content="We are updated">
+    
+    
+        <!-- google fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
+        <!-- favicons -->
+        <link rel="stylesheet" href="{% static 'img/icons/favicon.png' %}">
+        <link rel="shortcut icon" href="{% static '/img/icons/favicon.png' %}" type="image/x-icon">
+    
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="{% static '/css/pro/css/all.min.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="{% static '/css/bootstrap-4.6.1-dist/css/bootstrap.min.css' %}">
+            
+            
+        <!-- animate css -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />            
+            
+        <!-- <link rel="stylesheet" href="docs.css"> -->
+        <!-- <link rel="stylesheet" href="/css/custom.css"> -->
+        <link rel="stylesheet" href="{% static 'includes/css/main.min.css@t=1663063711.css' %}">
+        <link rel="stylesheet" href="{% static './css/contact.css' %}">
+        <link rel="stylesheet" href="{% static '/css/style.css' %}">
+        <link rel="stylesheet" href="{% static './css/main.css' %}">
+        <link rel="stylesheet" href="{% static './css/stylesheet.css' %}">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <link rel="stylesheet" href="{% static './css/ext.css' %}">
+        <link rel="stylesheet" href="{% static './css/post_details.css' %}">
+    
+
+    </head>
+    <body>
+        
+        {% include 'includes/navbar.html' %} 
+    
+    
+    
+     
+        
+        {% block content %}
+
+        
+
+
+
+        {% endblock %}
+
+        
+        {% include 'includes/top-blog.html' %}
+            
+    
+        {% include 'includes/footer.html' %}
+    </body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+    <!-- animate js -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="{% static 'js/widget.js' %}"></script>
+    <script src="{% static '/js/scr.js' %}"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+
+    <script>
+        window.onscroll = function() {
+            var e = document.getElementById("scrolltop");
+            if (!e) {
+                e = document.createElement("a");
+                e.id = "scrolltop";
+                e.href = "#";
+                document.body.appendChild(e);
+            }
+            e.style.display = document.documentElement.scrollTop > 300 ? "block" : "none";
+            e.onclick = (ev) => {
+                ev.preventDefault();
+                document.documentElement.scrollTop = 0;
+            };
+            };
+           
+    
+    </script>
+
+</html>
